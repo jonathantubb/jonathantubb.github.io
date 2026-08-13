@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trip Reports</title>
+<style>
+  body {
+    font: 18px/1.65 Cambria, Georgia, "Times New Roman", serif;
+    color: #1a1a1a;
+    background: #fff;
+    margin: 0;
+  }
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  a { color: #0000ee; }
+  a:visited { color: #551a8b; }
+  a:focus-visible { outline: 2px solid #0000ee; outline-offset: 2px; }
+
+  .backhome { display: inline-block; font-size: 0.9rem; margin-bottom: 20px; }
+
+  h1 { text-align: center; font-size: 2rem; margin: 0 0 24px; }
+
+  /* Lets the table scroll instead of breaking the layout on phones */
+  .table-wrap { overflow-x: auto; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+  }
+  th, td {
+    border: 1px solid #888;
+    padding: 10px 14px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th { text-align: center; font-size: 1.05rem; }
+
+  td .place { font-weight: 700; }
+  td .what  { font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <a class="backhome" href="index.html">&larr; Home</a>
+
+    <h1>Trip Reports</h1>
+
+    <div class="table-wrap">
+    <table>
+      <tr>
+        <th>Where and When</th>
+        <th>Trip Reports</th>
+      </tr>
+
+      <!-- Newest trips on top. To add one: copy a whole <tr> block,
+           edit the left cell, and point the link at the new .html file. -->
+      <tr>
+        <td>
+          <span class="place">Chamonix, France</span><br>
+          Early August 2026<br>
+          <span class="what">Trail running, tourism</span>
+        </td>
+        <td>
+          <a href="trip-report-template.html">Travelog: Chamonix, France</a>
+        </td>
+      </tr>
+
+      <!-- Example row for a trip with several reports or a photo set:
+      <tr>
+        <td>
+          <span class="place">Tour du Mont Blanc</span><br>
+          September 2026<br>
+          <span class="what">Trekking</span>
+        </td>
+        <td>
+          <a href="tmb-part1-2026.html">Travelog: TMB, days 1&ndash;4</a><br>
+          <a href="tmb-part2-2026.html">Travelog: TMB, days 5&ndash;7</a><br>
+          <a href="tmb-photos-2026.html">Photos</a> (63)
+        </td>
+      </tr>
+      -->
+
+    </table>
+    </div>
+
+  </div>
+</body>
+</html>

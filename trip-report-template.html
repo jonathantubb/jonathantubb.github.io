@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CHANGE THIS: browser tab title -->
+<title>Chamonix, France — August 2026</title>
+<style>
+  body {
+    font: 18px/1.65 Cambria, Georgia, "Times New Roman", serif;
+    color: #1a1a1a;
+    background: #fff;
+    margin: 0;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  a { color: #0000ee; }
+  a:visited { color: #551a8b; }
+  a:focus-visible { outline: 2px solid #0000ee; outline-offset: 2px; }
+
+  .backlink { display: inline-block; font-size: 0.9rem; margin-bottom: 28px; }
+
+  h1 { text-align: center; font-size: 1.9rem; line-height: 1.25; margin: 0 0 32px; }
+
+  /* Two columns: text on the left, images on the right */
+  .report { display: flex; gap: 36px; align-items: flex-start; }
+  .text { flex: 1 1 auto; min-width: 0; }
+  .text p { margin: 0 0 20px; }
+  .text p:last-child { margin-bottom: 0; }
+
+  .gallery { flex: 0 0 320px; }
+  .gallery figure { margin: 0 0 22px; }
+  .gallery figure:last-child { margin-bottom: 0; }
+  .gallery img { width: 100%; height: auto; display: block; border: 1px solid #ddd; }
+  .gallery figcaption { font-size: 0.8rem; color: #666; margin-top: 5px; }
+
+  /* Shown in place of any image file that isn't there yet */
+  .gallery .placeholder {
+    aspect-ratio: 3 / 2;
+    background: #e9e9e9;
+    border: 1px solid #ddd;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* On phones the two columns stack, images below the text */
+  @media (max-width: 640px) {
+    .page { padding: 28px 18px 60px; }
+    .report { flex-direction: column; }
+    .gallery { flex-basis: auto; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <a class="backlink" href="trips.html">&larr; All trips</a>
+
+    <!-- CHANGE THIS: place and date -->
+    <h1>Chamonix, France — August 2026</h1>
+
+    <div class="report">
+      <div class="text" id="text"></div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+
+  </div>
+
+
+  <!-- ================================================================
+       EDIT ONLY THE TWO BLOCKS BELOW.
+
+       1) YOUR WRITING. Separate paragraphs with a blank line.
+          You can use links and emphasis inline, e.g.
+          <a href="https://...">a link</a> or <em>italics</em>.
+          The last paragraph here is the "Next:" teaser.
+       ================================================================ -->
+  <script type="text/plain" id="source">
+<a href="https://en.wikipedia.org/wiki/Chamonix">Chamonix</a> sits in the valley below Mont Blanc, about ninety minutes from Lausanne by train and bus. I went for a long weekend in early August to run the lower trails and get a look at the high peaks before committing to anything bigger. My sister came along for the first two days.
+
+The Grand Balcon Sud runs along the east side of the valley with the whole massif in view across the way. We started from Planpraz and followed it north toward La Flégère, a little over six miles with a steady climb at the start and easy running after. The trail was busy near the lifts and empty within twenty minutes of leaving them.
+
+The town itself is worth a day. We ate at a small place off the main street, watched climbers sort gear in every café, and rode the <a href="https://en.wikipedia.org/wiki/Aiguille_du_Midi">Aiguille du Midi</a> cable car to 3,842 meters for the view into the Vallée Blanche. The air at the top is thin enough to feel on the stairs.
+
+<strong>Next:</strong> three days on the Tour du Mont Blanc, starting from Les Houches.
+  </script>
+
+
+  <!-- ================================================================
+       2) YOUR IMAGES. One per line, in top-to-bottom order:
+              filename.jpg | optional caption
+          Drop the actual files into an "images" folder in the repo.
+          A grey box appears for any file that isn't there yet.
+       ================================================================ -->
+  <script type="text/plain" id="image-list">
+chamonix-valley.jpg | The valley from the Grand Balcon Sud
+aiguille-du-midi.jpg | Looking toward the Vallée Blanche
+  </script>
+
+
+  <!-- Layout engine. You don't need to touch this. -->
+  <script>
+    (function () {
+      // Build the text column: split the writing on blank lines into paragraphs.
+      var raw = document.getElementById('source').textContent.trim();
+      var textCol = document.getElementById('text');
+      raw.split(/\n\s*\n/).forEach(function (chunk) {
+        chunk = chunk.trim();
+        if (!chunk) return;
+        var p = document.createElement('p');
+        p.innerHTML = chunk;   // lets your inline <a> / <em> render
+        textCol.appendChild(p);
+      });
+
+      // Build the image column from the "filename | caption" list.
+      var lines = document.getElementById('image-list').textContent.trim().split('\n');
+      var gallery = document.getElementById('gallery');
+      var count = 0;
+      lines.forEach(function (line) {
+        line = line.trim();
+        if (!line) return;
+        var bar = line.indexOf('|');
+        var file = (bar === -1 ? line : line.slice(0, bar)).trim();
+        var caption = (bar === -1 ? '' : line.slice(bar + 1)).trim();
+
+        var fig = document.createElement('figure');
+        var img = document.createElement('img');
+        img.src = 'images/' + file;
+        img.alt = caption || file;
+        // If the file isn't there yet, show a tidy placeholder instead.
+        img.onerror = function () {
+          var ph = document.createElement('div');
+          ph.className = 'placeholder';
+          ph.textContent = caption || file;
+          fig.replaceChild(ph, img);
+        };
+        fig.appendChild(img);
+
+        if (caption) {
+          var fc = document.createElement('figcaption');
+          fc.textContent = caption;
+          fig.appendChild(fc);
+        }
+        gallery.appendChild(fig);
+        count++;
+      });
+      if (count === 0) gallery.style.display = 'none';  // no images -> text uses full width
+    })();
+  </script>
+
+</body>
+</html>
