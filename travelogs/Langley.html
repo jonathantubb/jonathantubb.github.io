@@ -5,13 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Travelog: Mt. Langley</title>
 <style>
-  /* Photos shrink to fit narrow screens; nothing else is styled. */
-  img { max-width: 100%; height: auto; }
+  /* Text on the left, photos stacked on the right. Stacks into one column on phones. */
+  table.log { width: 100%; border-collapse: collapse; }
+  td.text { width: 60%; }
+  td.photos { width: 40%; text-align: center; }
+  td.photos p { margin: 0 0 16px 0; }
+  img { width: 100%; height: auto; }
+  @media (max-width: 700px) {
+    table.log, table.log tr, table.log td { display: block; width: 100%; }
+  }
 </style>
 </head>
 <body>
 
 <h3>Mt. Langley, California &nbsp; (October 2025)</h3>
+
+<table class="log" cellpadding="8">
+<tr>
+<td class="text" valign="top">
 
 <p>
 After a summer of Colorado peak-bagging with my sister (mostly on three-day weekends between thesis research at Stanford), I began my junior year with my alpinism itch still not completely scratched. To that end, two friends and I planned to spend the first weekend of October driving the seven hours to <a href="https://en.wikipedia.org/wiki/Mount_Langley">Mt. Langley</a> near Lone Pine, climbing the mountain over two days, and driving back. As my dad pointed out, this would be a road trip with a side of hiking.
@@ -37,14 +48,17 @@ Shortly before nine, we reached the final climb, which we completed surrounded b
 I was already quite happy we’d pulled everything off without a hitch, but my friend’s joy was cemented when we found the wallet he thought he’d lost under the car. Between two gas stations, one Chipotle, and seven hours of country music, we were back at Stanford before we knew it.
 </p>
 
-<p>
-1<br><img src="images/Langley-1.jpg" alt="photo 1"><br><br>
-2<br><img src="images/Langley-2.jpg" alt="photo 2"><br><br>
-3<br><img src="images/Langley-3.jpg" alt="photo 3"><br><br>
-4<br><img src="images/Langley-4.jpg" alt="photo 4"><br><br>
-5<br><img src="images/Langley-5.jpg" alt="photo 5"><br><br>
-6<br><img src="images/Langley-6.jpg" alt="photo 6"><br><br>
-</p>
+</td>
+<td class="photos" valign="top">
+<p>1<br><img src="images/Langley-1.jpg" alt="photo 1"></p>
+<p>2<br><img src="images/Langley-2.jpg" alt="photo 2"></p>
+<p>3<br><img src="images/Langley-3.jpg" alt="photo 3"></p>
+<p>4<br><img src="images/Langley-4.jpg" alt="photo 4"></p>
+<p>5<br><img src="images/Langley-5.jpg" alt="photo 5"></p>
+<p>6<br><img src="images/Langley-6.jpg" alt="photo 6"></p>
+</td>
+</tr>
+</table>
 
 <p><a href="../index.html">Back to Jonathan Tubb's Travelogs and Photos</a></p>
 
